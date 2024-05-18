@@ -15,11 +15,14 @@ app.use(express.static('public'));
 // Import customer routes
 const customerRoutes = require('./routes/customers');
 
+// Import address routes
+const addressRoutes = require('./routes/addresses');
+
 // Import product routes
 const productRoutes = require('./routes/products');
 
-// Import product routes
-const addressRoutes = require('./routes/addresses');
+// Import supplier routes
+const supplierRoutes = require('./routes/suppliers');
 
 // Home route
 app.get('/', (req, res) => {
@@ -36,18 +39,8 @@ app.use('/products', productRoutes);
 // register address route
 app.use('/addresses', addressRoutes);
 
-
-// get all customers
-// app.get('/customers', async (req, res) => {
-//     connection.query('SELECT * FROM customer', (err, results) => {
-//         if (err) {
-//             console.error(err);
-//             res.status(500).json({ error: 'Internal server error' });
-//             return;
-//         }
-//         res.json(results);
-//     })
-// })
+// register supplier route
+app.use('/suppliers', supplierRoutes);
 
 // Start server
 app.listen(PORT, () => {
