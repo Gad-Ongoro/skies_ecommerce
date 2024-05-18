@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.use('/customers', customerRoutes);
 
 // register product route
-// app.use('/products', productRoutes);
+app.use('/products', productRoutes);
 
 
 // get all customers
