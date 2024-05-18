@@ -24,6 +24,9 @@ const productRoutes = require('./routes/products');
 // Import supplier routes
 const supplierRoutes = require('./routes/suppliers');
 
+// Import review routes
+const reviewRoutes = require('./routes/review');
+
 // Home route
 app.get('/', (req, res) => {
     res.send('Welcome to the E-commerce API!');
@@ -41,6 +44,9 @@ app.use('/addresses', addressRoutes);
 
 // register supplier route
 app.use('/suppliers', supplierRoutes);
+
+// register review route
+app.use('/reviews', reviewRoutes);
 
 // Start server
 app.listen(PORT, () => {
