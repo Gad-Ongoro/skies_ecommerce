@@ -18,6 +18,9 @@ const customerRoutes = require('./routes/customers');
 // Import product routes
 const productRoutes = require('./routes/products');
 
+// Import product routes
+const addressRoutes = require('./routes/addresses');
+
 // Home route
 app.get('/', (req, res) => {
     res.send('Welcome to the E-commerce API!');
@@ -29,6 +32,9 @@ app.use('/customers', customerRoutes);
 
 // register product route
 app.use('/products', productRoutes);
+
+// register address route
+app.use('/addresses', addressRoutes);
 
 
 // get all customers
