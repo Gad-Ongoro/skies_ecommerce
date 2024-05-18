@@ -25,7 +25,10 @@ const productRoutes = require('./routes/products');
 const supplierRoutes = require('./routes/suppliers');
 
 // Import review routes
-const reviewRoutes = require('./routes/review');
+const reviewRoutes = require('./routes/reviews');
+
+// Import order routes
+const orderRoutes = require('./routes/orders');
 
 // Home route
 app.get('/', (req, res) => {
@@ -47,6 +50,9 @@ app.use('/suppliers', supplierRoutes);
 
 // register review route
 app.use('/reviews', reviewRoutes);
+
+// register order route
+app.use('/orders', orderRoutes);
 
 // Start server
 app.listen(PORT, () => {
