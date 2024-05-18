@@ -12,47 +12,29 @@ app.use(express.urlencoded({ extended: true }));
 // Static files
 app.use(express.static('public'));
 
-// Import customer routes
+// Import routes
 const customerRoutes = require('./routes/customers');
-
-// Import address routes
 const addressRoutes = require('./routes/addresses');
-
-// Import product routes
 const productRoutes = require('./routes/products');
-
-// Import supplier routes
 const supplierRoutes = require('./routes/suppliers');
-
-// Import review routes
 const reviewRoutes = require('./routes/reviews');
-
-// Import order routes
 const orderRoutes = require('./routes/orders');
+const profileRoutes = require('./routes/profiles');
+
+// register routes
+app.use('/customers', customerRoutes);
+app.use('/products', productRoutes);
+app.use('/addresses', addressRoutes);
+app.use('/suppliers', supplierRoutes);
+app.use('/reviews', reviewRoutes);
+app.use('/orders', orderRoutes);
+app.use('/profiles', profileRoutes);
 
 // Home route
 app.get('/', (req, res) => {
     res.send('Welcome to the E-commerce API!');
 });
 
-// Routes
-// register customer route
-app.use('/customers', customerRoutes);
-
-// register product route
-app.use('/products', productRoutes);
-
-// register address route
-app.use('/addresses', addressRoutes);
-
-// register supplier route
-app.use('/suppliers', supplierRoutes);
-
-// register review route
-app.use('/reviews', reviewRoutes);
-
-// register order route
-app.use('/orders', orderRoutes);
 
 // Start server
 app.listen(PORT, () => {
